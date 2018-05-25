@@ -35,8 +35,6 @@ function start(device) {
     if (device.getDeviceIdentifier() == 250) {
         //device.registerListener(accelerationChanged)
     }
-
-
 }
 
 function humidityChanged(valObject) {

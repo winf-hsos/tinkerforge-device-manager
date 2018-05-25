@@ -34,3 +34,4 @@ function _enumerationCallback(uid, connectedUid, position, hardwareVersion, firm
 }
 
 exports.getDeviceByUid = deviceManager.getDeviceByUid;
+exports.getDeviceByIdentifier = deviceManager.getDeviceByIdentifier;

@@ -1,0 +1,23 @@
+{
+  "name": "tinkerforge-device-manager",
+  "version": "0.1.0",
+  "description": "A node library to make connecting to and accessing Tinkerforge devices easier. Created at the University of Applied Sciences in Osnabrueck.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/winf-hsos/tinkerforge-device-manager.git"
+  },
+  "keywords": [
+    "tinkerforge",
+    "iot"
+  ],
+  "author": "Nicolas Meseth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/winf-hsos/tinkerforge-device-manager/issues"
+  },
+  "homepage": "https://github.com/winf-hsos/tinkerforge-device-manager#readme"
+}

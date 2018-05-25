@@ -19,5 +19,10 @@
   "bugs": {
     "url": "https://github.com/winf-hsos/tinkerforge-device-manager/issues"
   },
-  "homepage": "https://github.com/winf-hsos/tinkerforge-device-manager#readme"
+  "homepage": "https://github.com/winf-hsos/tinkerforge-device-manager#readme",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "moment": "^2.22.1",
+    "tinkerforge": "^2.0.17"
+  }
 }

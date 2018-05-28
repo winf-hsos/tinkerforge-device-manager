@@ -10,7 +10,6 @@ exports.initialize = function (host = "localhost", port = 4223) {
 
     ipcon.on(Tinkerforge.IPConnection.CALLBACK_CONNECTED,
         function (connectReason) {
-            console.log(connectReason);
             ipcon.enumerate();
         }
     );

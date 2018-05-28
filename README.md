@@ -5,7 +5,10 @@ A node library to make connecting to and accessing Tinkerforge devices easier. C
 Currently supported Tinkerforge devices:
 
 - Accelerometer Bricklet
+- Ambient Light 2.0 Bricklet
 - Humidity V2 Bricklet
+- NFC Bricklet
+- OLED 128x64 Display Bricklet
 - RGB LED Bricklet
 - RGB Button Bricklet
 

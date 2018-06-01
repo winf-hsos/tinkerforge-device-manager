@@ -9,6 +9,7 @@ Currently supported Tinkerforge devices:
 - Humidity V2 Bricklet
 - NFC Bricklet
 - OLED 128x64 Display Bricklet
+- Outdoor Weather Bricklet
 - RGB LED Bricklet
 - RGB Button Bricklet
 
@@ -20,6 +21,9 @@ var dm = require('./index.js');
 
 // You can pass host and port, default is 'localhost' and 4223
 dm.initialize();
+
+// This will call start for each enumerated device
+dm.setConnectCallback(start);
 
 // This returns a promise
 dm.getDeviceByUid('Dik').then(start);

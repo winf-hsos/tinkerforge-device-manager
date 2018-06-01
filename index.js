@@ -1,6 +1,8 @@
 var Tinkerforge = require('tinkerforge');
 var deviceManager = require('./lib/deviceManager.js');
 
+var connectCallback;
+
 exports.initialize = function (host = "localhost", port = 4223) {
     console.log("Waiting for devices to connect...");
 
@@ -17,15 +19,23 @@ exports.initialize = function (host = "localhost", port = 4223) {
     ipcon.on(Tinkerforge.IPConnection.CALLBACK_ENUMERATE, _enumerationCallback);
 }
 
+exports.setConnectCallback = function (callback) {
+    connectCallback = callback;
+}
+
 /* Enumeration Types: 0 - Available, 1 - Connected, 2 - Offline (nur USB) */
 function _enumerationCallback(uid, connectedUid, position, hardwareVersion, firmwareVersion,
     deviceIdentifier, enumerationType) {
 
     if (enumerationType == Tinkerforge.IPConnection.ENUMERATION_TYPE_AVAILABLE) {
-        deviceManager.add(uid, deviceIdentifier)
+        var device = deviceManager.add(uid, deviceIdentifier);
+        if (typeof connectCallback !== "undefined")
+            connectCallback(device);
     }
     else if (enumerationType == Tinkerforge.IPConnection.ENUMERATION_TYPE_CONNECTED) {
-        deviceManager.addAgain(uid, deviceIdentifier);
+        var device = deviceManager.addAgain(uid, deviceIdentifier);
+        if (typeof connectCallback !== "undefined")
+            connectCallback(device);
     }
     else {
         deviceManager.remove(uid);

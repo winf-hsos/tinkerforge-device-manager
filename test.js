@@ -1,9 +1,6 @@
 var dm = require('./index.js');
 dm.initialize();
-dm.getDeviceByUid('Dik').then(start);
-dm.getDeviceByIdentifier(282).then(start);
-dm.getDeviceByIdentifier(271).then(start);
-dm.getDeviceByIdentifier(250).then(start);
+dm.setConnectCallback(start);
 
 function start(device) {
     console.log(device.getName());
@@ -35,6 +32,15 @@ function start(device) {
     if (device.getDeviceIdentifier() == 250) {
         //device.registerListener(accelerationChanged)
     }
+
+    // Outdoor Weather Bricklet
+    if(device.getDeviceIdentifier() === 288) {
+        device.registerListener(weatherDataChanged)
+    }
+}
+
+function weatherDataChanged(valueObj) {
+    console.dir(valueObj);
 }
 
 function humidityChanged(valObject) {

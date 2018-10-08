@@ -20,13 +20,13 @@ Currently supported Tinkerforge devices:
 # Example
 Consider you have a Humidity V2 Bricklet connected to a Master Brick. You can then use the device manager to get the Humidity V2 Bricklet via its UID or its [device identifier](https://www.tinkerforge.com/de/doc/Software/Device_Identifier.html). The process is as follows:
 
-1. Initialize the device manager (`dm.initialize()`);
-2. Set a callback that is called for each connected device, e.g. `dm.setConnectCallback(start);`
+1. Initialize the device manager (`dm.initialize()`)
+2. Set a callback that is called for each connected device (e.g. `dm.setConnectCallback(start);`)
 3. In `start(device)` you'll have the current device as a wrapper object. Now you can check the type and register listeners (or do anything else)
 
 Here is a full example (see also `test.js`):
 
-```
+```js
 var dm = require('./index.js');
 
 // You can pass host and port, default is 'localhost' and 4223

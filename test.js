@@ -3,6 +3,11 @@ dm.initialize();
 dm.setConnectCallback(start);
 
 function start(device) {
+    if (typeof device == "undefined") {
+        console.log("Device is undefined");
+        return;
+    }
+
     console.log(device.getName());
 
     // RGB Button Bricklet
@@ -22,10 +27,35 @@ function start(device) {
             device.stopBlink();
         }, 5000)
     }
-
+    
     // Humidity V2 Bricklet
     if (device.getDeviceIdentifier() == 283) {
-        //device.registerListener(humidityChanged)
+        //device.registerListener(humidityChanged);
+    }
+
+    // Ambient Light Bricklet
+    if (device.getDeviceIdentifier() == 252) {
+        //device.registerListener(ambientLightChanged);
+    }
+
+    // UV Light Bricklet
+    if (device.getDeviceIdentifier() == 265) {
+        //device.registerListener(uvLightChanged);
+    }
+
+    // CO2 Bricklet
+    if (device.getDeviceIdentifier() == 262) {
+        //device.registerListener(co2Changed);
+    }
+
+    // Barometer Bricklet
+    if (device.getDeviceIdentifier() == 221) {
+        //device.registerListener(airPressureChanged);
+    }
+
+    // Sound Intensity Bricklet
+    if (device.getDeviceIdentifier() == 238) {
+        device.registerListener(soundIntensityChanged);
     }
 
     // Accelerometer Bricklet
@@ -34,16 +64,39 @@ function start(device) {
     }
 
     // Outdoor Weather Bricklet
-    if(device.getDeviceIdentifier() === 288) {
-        device.registerListener(weatherDataChanged)
+    if (device.getDeviceIdentifier() === 288) {
+        //device.registerListener(weatherDataChanged)
     }
+
 }
 
-function weatherDataChanged(valueObj) {
-    console.dir(valueObj);
+function weatherDataChanged(valObj) {
+    console.dir(valObj);
+}
+
+function soundIntensityChanged(valObject) {
+    console.dir(valObject);
 }
 
 function humidityChanged(valObject) {
+    if (valObject.value.type == "temperature") {
+        console.log(valObject.value.value);
+    }
+}
+
+function co2Changed(valObject) {
+    console.log(valObject);
+}
+
+function airPressureChanged(valObject) {
+    console.log(valObject);
+}
+
+function ambientLightChanged(valObject) {
+    console.log(valObject);
+}
+
+function uvLightChanged(valObject) {
     console.log(valObject);
 }
 

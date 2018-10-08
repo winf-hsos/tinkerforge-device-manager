@@ -23,6 +23,6 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "moment": "^2.22.1",
-    "tinkerforge": "^2.0.17"
+    "tinkerforge": "^2.1.20"
   }
 }

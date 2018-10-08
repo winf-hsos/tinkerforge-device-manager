@@ -4,17 +4,27 @@ A node library to make connecting to and accessing Tinkerforge devices easier. C
 # Supported Devices
 Currently supported Tinkerforge devices:
 
-- Accelerometer Bricklet
-- Ambient Light 2.0 Bricklet
-- Humidity V2 Bricklet
-- NFC Bricklet
-- OLED 128x64 Display Bricklet
-- Outdoor Weather Bricklet
-- RGB LED Bricklet
-- RGB Button Bricklet
+- [Accelerometer Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Accelerometer.html)
+- [Ambient Light 2.0 Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Ambient_Light_V2.html)
+- [Barometer Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Barometer.html#barometer-bricklet)
+- [C02 Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/CO2.html)
+- [Humidity V2 Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Humidity_V2.html)
+- [NFC Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/NFC.html)
+- [OLED 128x64 Display Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/OLED_128x64.html)
+- [Outdoor Weather Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Outdoor_Weather.html)
+- [RGB LED Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/RGB_LED.html)
+- [RGB LED Button Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/RGB_LED_Button.html)
+- [Sound Intensity Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Sound_Intensity.html)
+- [UV Light Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/UV_Light.html)
 
 # Example
-Consider you have a Humidity V2 Bricklet connected to a Master Brick. You can then use the device manager to get the Humidity V2 Bricklet via its UID. Note that the function returns a promise that will resolve as soon the device successfully connected:
+Consider you have a Humidity V2 Bricklet connected to a Master Brick. You can then use the device manager to get the Humidity V2 Bricklet via its UID or its [device identifier](https://www.tinkerforge.com/de/doc/Software/Device_Identifier.html). The process is as follows:
+
+1. Initialize the device manager (`dm.initialize()`);
+2. Set a callback that is called for each connected device, e.g. `dm.setConnectCallback(start);`
+3. In `start(device)` you'll have the current device as a wrapper object. Now you can check the type and register listeners (or do anything else)
+
+Here is a full example (see also `test.js`):
 
 ```
 var dm = require('./index.js');
@@ -25,14 +35,9 @@ dm.initialize();
 // This will call start for each enumerated device
 dm.setConnectCallback(start);
 
-// This returns a promise
-dm.getDeviceByUid('Dik').then(start);
-
-// Another way to get a device, in this case an accelerometer bricklet
-dm.getDeviceByIdentifier(250).then(start);
-
-function start(humidity) {
-    console.log(humidity.getName());
+function start(device) {
+    // Check the name of the current device
+    console.log(device.getName());
 
     // Humidity V2 Bricklet
     if (device.getDeviceIdentifier() == 283) {
@@ -43,6 +48,8 @@ function start(humidity) {
     if (device.getDeviceIdentifier() == 250) {
         device.registerListener(accelerationChanged)
     }
+
+    // And so on...
 }
 
 function humidityChanged(valObject) {

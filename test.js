@@ -27,7 +27,7 @@ function start(device) {
             device.stopBlink();
         }, 5000)
     }
-    
+
     // Humidity V2 Bricklet
     if (device.getDeviceIdentifier() == 283) {
         //device.registerListener(humidityChanged);
@@ -45,7 +45,7 @@ function start(device) {
 
     // CO2 Bricklet
     if (device.getDeviceIdentifier() == 262) {
-        //device.registerListener(co2Changed);
+        device.registerListener(co2Changed);
     }
 
     // Barometer Bricklet
@@ -68,6 +68,64 @@ function start(device) {
         //device.registerListener(weatherDataChanged)
     }
 
+    // Sound Pressure Level Bricklet
+    if (device.getDeviceIdentifier() === 290) {
+        //device.registerListener(soundPressureChanged)
+    }
+
+    // Barometer V2 Bricklet
+    if (device.getDeviceIdentifier() === 2117) {
+        //device.registerListener(barometerChanged)
+    }
+
+    // Air Quality Bricklet
+    if (device.getDeviceIdentifier() === 297) {
+        device.setCallbackInterval(5000);
+        device.registerListener(airQualityChanged)
+    }
+
+    // UV Light V2
+    if (device.getDeviceIdentifier() === 2118) {
+        //device.setCallbackInterval(2000);
+        //device.registerListener(uvLightV2Changed)
+    }
+
+    // Dust Detector
+    if (device.getDeviceIdentifier() === 260) {
+        //device.setCallbackInterval(2000);
+        //device.registerListener(dustChanged)
+    }
+
+    // Thermal Imaging
+    if (device.getDeviceIdentifier() === 278) {
+        //device.setCallbackInterval(2000);
+        device.registerListener(thermalImageChanged)
+    }
+}
+
+function thermalImageChanged(valObj) {
+    console.dir(valObj);
+}
+
+function dustChanged(valObj) {
+    console.dir(valObj);
+}
+
+function uvLightV2Changed(valObj) {
+    console.dir(valObj);
+}
+
+function airQualityChanged(valObj) {
+    console.dir(valObj);
+}
+
+function barometerChanged(valObj) {
+    console.dir(valObj);
+}
+
+function soundPressureChanged(valObj) {
+    if (valObj.value.type == "decibel")
+        console.dir(valObj);
 }
 
 function weatherDataChanged(valObj) {

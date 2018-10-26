@@ -5,17 +5,23 @@ A node library to make connecting to and accessing Tinkerforge devices easier. C
 Currently supported Tinkerforge devices:
 
 - [Accelerometer Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Accelerometer.html)
+- [Air Quality Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Air_Quality.html)
 - [Ambient Light 2.0 Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Ambient_Light_V2.html)
-- [Barometer Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Barometer.html#barometer-bricklet)
+- [Barometer 1.0 Bricklet 1.0](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Barometer.html#barometer-bricklet)
+- [Barometer 2.0 Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Barometer_V2.html)
 - [C02 Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/CO2.html)
-- [Humidity V2 Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Humidity_V2.html)
+- [Dust Detector Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Dust_Detector.html)
+- [Humidity 2.0 Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Humidity_V2.html)
 - [NFC Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/NFC.html)
 - [OLED 128x64 Display Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/OLED_128x64.html)
 - [Outdoor Weather Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Outdoor_Weather.html)
 - [RGB LED Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/RGB_LED.html)
 - [RGB LED Button Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/RGB_LED_Button.html)
 - [Sound Intensity Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Sound_Intensity.html)
-- [UV Light Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/UV_Light.html)
+- [Sound Pressure Level Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Sound_Pressure_Level.html)
+- [Thermal Imaging Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Thermal_Imaging.html)
+- [UV Light 1.0 Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/UV_Light.html)
+- [UV Light 2.0 Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/UV_Light_V2.html)
 
 # Example
 Consider you have a Humidity V2 Bricklet connected to a Master Brick. You can then use the device manager to get the Humidity V2 Bricklet via its UID or its [device identifier](https://www.tinkerforge.com/de/doc/Software/Device_Identifier.html). The process is as follows:

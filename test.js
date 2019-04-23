@@ -10,6 +10,12 @@ function start(device) {
 
     console.log(device.getName());
 
+    var deviceName = device.getName();
+
+    if(deviceName == "Outdoor Weather Bricklet") {
+        device.registerListener(weatherDataChanged);
+    }
+
     // RGB Button Bricklet
     if (device.getDeviceIdentifier() == 282) {
         device.blink(255, 0, 0, 500);
@@ -34,7 +40,7 @@ function start(device) {
     }
 
     // Ambient Light Bricklet
-    if (device.getDeviceIdentifier() == 252) {
+    if (device.getDeviceIdentifier() == 259) {
         //device.registerListener(ambientLightChanged);
     }
 
@@ -92,8 +98,8 @@ function start(device) {
 
     // Dust Detector
     if (device.getDeviceIdentifier() === 260) {
-        //device.setCallbackInterval(2000);
-        //device.registerListener(dustChanged)
+        device.setCallbackInterval(2000);
+        device.registerListener(dustChanged)
     }
 
     // Thermal Imaging
@@ -104,7 +110,7 @@ function start(device) {
 }
 
 function thermalImageChanged(valObj) {
-    console.dir(valObj);
+    //console.dir(valObj);
 }
 
 function dustChanged(valObj) {

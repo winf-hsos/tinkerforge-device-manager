@@ -12,9 +12,15 @@ function start(device) {
 
     var deviceName = device.getName();
 
-    if(deviceName == "Outdoor Weather Bricklet") {
+    if (deviceName == "Outdoor Weather Bricklet") {
         device.registerListener(weatherDataChanged);
     }
+
+    // Motion Detector 2.0
+    if (device.getDeviceIdentifier() == 292) {
+        device.registerListener(motionDetected);
+    }
+
 
     // RGB Button Bricklet
     if (device.getDeviceIdentifier() == 282) {
@@ -107,6 +113,10 @@ function start(device) {
         //device.setCallbackInterval(2000);
         device.registerListener(thermalImageChanged)
     }
+}
+
+function motionDetected(valObj) {
+    console.log(valObj);
 }
 
 function thermalImageChanged(valObj) {

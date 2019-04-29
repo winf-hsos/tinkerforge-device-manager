@@ -12,6 +12,7 @@ Currently supported Tinkerforge devices:
 - [C02 Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/CO2.html)
 - [Dust Detector Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Dust_Detector.html)
 - [Humidity 2.0 Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Humidity_V2.html)
+- [LCD 128x64 Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/LCD_128x64.html)
 - [Motion Detector 2.0 Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Motion_Detector_V2.html)
 - [NFC Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/NFC.html)
 - [OLED 128x64 Display Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/OLED_128x64.html)

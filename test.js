@@ -21,6 +21,13 @@ function start(device) {
         device.registerListener(motionDetected);
     }
 
+    
+    // LCD 128x64
+    if (device.getDeviceIdentifier() == 298) {
+        device.clearDisplay();
+        device.write(0,0, "Herzlich Willkommen!");
+        device.registerListener(touchEvent);
+    }
 
     // RGB Button Bricklet
     if (device.getDeviceIdentifier() == 282) {
@@ -113,6 +120,10 @@ function start(device) {
         //device.setCallbackInterval(2000);
         device.registerListener(thermalImageChanged)
     }
+}
+
+function touchEvent(valObj) {
+    console.dir(valObj);
 }
 
 function motionDetected(valObj) {

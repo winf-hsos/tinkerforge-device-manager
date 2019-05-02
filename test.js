@@ -120,6 +120,14 @@ function start(device) {
         //device.setCallbackInterval(2000);
         device.registerListener(thermalImageChanged)
     }
+
+    if (device.getDeviceIdentifier() === 25) {
+        device.registerListener(distanceIRChanged)
+    }
+}
+
+function distanceIRChanged(valObj) {
+    console.dir(valObj);
 }
 
 function touchEvent(valObj) {

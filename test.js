@@ -21,11 +21,11 @@ function start(device) {
         device.registerListener(motionDetected);
     }
 
-    
+
     // LCD 128x64
     if (device.getDeviceIdentifier() == 298) {
         device.clearDisplay();
-        device.write(0,0, "Herzlich Willkommen!");
+        device.write(0, 0, "Herzlich Willkommen!");
         device.registerListener(touchEvent);
     }
 
@@ -124,6 +124,24 @@ function start(device) {
     if (device.getDeviceIdentifier() === 25) {
         device.registerListener(distanceIRChanged)
     }
+
+    // Distance US
+    if (device.getDeviceIdentifier() === 229) {
+        //device.registerListener(distanceIRChanged)
+    }
+
+    // GPS 2.0 Bricklet
+    if (device.getDeviceIdentifier() === 276) {
+        device.registerListener(gpsChanged);
+    }
+}
+
+function gpsChanged(valObj) {
+    console.log(valObj);
+}
+
+function distanceUSChanged(valObj) {
+    console.dir(valObj);
 }
 
 function distanceIRChanged(valObj) {

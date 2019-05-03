@@ -12,6 +12,8 @@ Currently supported Tinkerforge devices:
 - [C02 Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/CO2.html)
 - [Dust Detector Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Dust_Detector.html)
 - [Distance IR Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Distance_IR.html)
+- [Distance US Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Distance_US.html)
+- [GPS 2.0 Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/GPS_V2.html)
 - [Humidity 2.0 Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Humidity_V2.html)
 - [LCD 128x64 Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/LCD_128x64.html)
 - [Motion Detector 2.0 Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Motion_Detector_V2.html)

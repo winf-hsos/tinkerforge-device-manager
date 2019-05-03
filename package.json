@@ -1,6 +1,6 @@
 {
   "name": "tinkerforge-device-manager",
-  "version": "0.5.6",
+  "version": "0.5.7",
   "description": "A node library to make connecting to and accessing Tinkerforge devices easier. Created at the University of Applied Sciences in Osnabrueck.",
   "main": "index.js",
   "scripts": {

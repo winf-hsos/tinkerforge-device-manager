@@ -134,6 +134,21 @@ function start(device) {
     if (device.getDeviceIdentifier() === 276) {
         device.registerListener(gpsChanged);
     }
+
+    // Piezo Speaker Bricklet
+    if (device.getDeviceIdentifier() === 242) {
+        //device.beep(1000, 2100);
+
+        device.alarm(200, 300, 2000, 2000);
+
+        /*
+        setTimeout(() => {
+            device.stopAlarm();
+        }, 10000);
+        */
+    }
+
+
 }
 
 function gpsChanged(valObj) {

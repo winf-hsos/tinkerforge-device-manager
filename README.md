@@ -20,6 +20,7 @@ Currently supported Tinkerforge devices:
 - [NFC Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/NFC.html)
 - [OLED 128x64 Display Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/OLED_128x64.html)
 - [Outdoor Weather Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Outdoor_Weather.html)
+- [Piezo Speaker Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Piezo_Speaker.html)
 - [RGB LED Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/RGB_LED.html)
 - [RGB LED Button Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/RGB_LED_Button.html)
 - [Sound Intensity Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Sound_Intensity.html)

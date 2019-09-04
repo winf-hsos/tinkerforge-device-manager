@@ -7,9 +7,13 @@ async function run() {
     var devs = await dm.getAllDevices();
     console.log(devs.length);
 
-    for (var i = 0; i < devs.length; i++)
+    for (var i = 0; i < devs.length; i++) {
         console.dir(devs[i].deviceName);
-
+        if (devs[i].deviceIdentifer !== 13)
+            devs[i].registerListener((valueObj) => {
+                console.dir(valueObj);
+            })
+    }
 
     /*
     var humidity = await dm.getDeviceByIdentifier(283);
